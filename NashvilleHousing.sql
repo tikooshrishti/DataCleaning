@@ -15,7 +15,7 @@ set SaleDateConverted  = CONVERT(date,SaleDate)
 
 select *
 from Portfolio..[Nashville Housing]
---where  PropertyAddress is null
+
 order by ParcelID
 
 select a.ParcelID, a.PropertyAddress, b.ParcelID, b.PropertyAddress, isnull(a.PropertyAddress,b.PropertyAddress)
@@ -35,8 +35,6 @@ where a.PropertyAddress is null
 
  select PropertyAddress
 from Portfolio..[Nashville Housing]
---where  PropertyAddress is null
---order by ParcelID
 
 select
 SUBSTRING(PropertyAddress, 1, CHARINDEX(',', PropertyAddress)-1) as Address
